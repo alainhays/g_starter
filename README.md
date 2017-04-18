@@ -1,5 +1,6 @@
 # g_starter
 
+**WARNING this is an incomplete project still in active development.**
 
 ## Author
 
