@@ -1,6 +1,14 @@
 # g_starter
 
-g_starter is a starter theme for Genesis Framework developers, based on HTML5 Boilerplate, gulp and Bower. It supports both Sass and Less, uses BrowserSync for syncing changes across local development devices and asset-builder to assemble dependencies through the JSON file based asset pipeline.
+
+## Author
+
+Nic Beltramelli   [@nicbeltramelli](https://twitter.com/NicBeltramelli)
+
+
+## Summary
+
+g_starter is a starter child theme for Genesis Framework developers, based on HTML5 Boilerplate, gulp and Bower. It supports both Sass and Less, uses BrowserSync for syncing changes across local development devices and asset-builder to assemble dependencies through the JSON file based asset pipeline.
 Tested up to WordPress 4.7 and Genesis 2.4.2.
 
 
@@ -19,7 +27,7 @@ Tested up to WordPress 4.7 and Genesis 2.4.2.
 * [gulp](http://gulpjs.com/) compiles both Sass and Less, checks for JavaScript errors, optimizes images, concatenates and minifies files, generates of a POT file for translation and automatic zipping production theme without including the development files.
 * [BrowserSync](http://www.browsersync.io/) keeps multiple browsers in sync while testing and automatically updates your changes to HTML, CSS, JS, images and other project files while you're developing.
 * [Bower](http://bower.io/) manages front-end packages.
-* [asset-builder](https://github.com/austinpray/asset-builder)assembles and orchestrates your dependencies defined in the JSON file based asset pipeline
+* [asset-builder](https://github.com/austinpray/asset-builder) assembles and orchestrates your dependencies defined in the JSON file based asset pipeline.
 
 
 ## Theme installation
@@ -27,6 +35,7 @@ Tested up to WordPress 4.7 and Genesis 2.4.2.
 Download or clone g_starter into a new folder within your WordPress themes directory.
 
 `git clone git@github.com:NicBeltramelli/g_starter.git your-theme && cd your-theme`
+
 
 ## Theme setup
 
@@ -41,7 +50,7 @@ g_starter uses [gulp](http://gulpjs.com/) as its build system and [Bower](http:/
 
 ### Install gulp and Bower
 
-Building the theme requires [node.js](http://nodejs.org/download/). We recommend you update to the latest version of npm: `npm install -g npm@latest`.
+Building the theme requires [node.js](http://nodejs.org/download/). Update to the latest version of npm: `npm install -g npm@latest`.
 
 From the command line:
 
@@ -89,3 +98,11 @@ If your local development URL looks like `http://localhost:8888/project-name/` y
   }
 ...
 ```
+
+
+## Credits
+
+Without these projects g_starter wouldn't be possible.
+
+* [Sage](https://github.com/roots/sage)
+* [Genesis Framework](http://my.studiopress.com/themes/genesis/)
