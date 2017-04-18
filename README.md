@@ -35,7 +35,7 @@ Tested up to WordPress 4.7 and Genesis 2.4.2.
 
 Download or clone g_starter into a new folder within your WordPress themes directory.
 
-`git clone git@github.com:NicBeltramelli/g_starter.git your-theme && cd your-theme`
+`git clone git@github.com:NicBeltramelli/g_starter.git your-theme`
 
 
 ## Theme setup
