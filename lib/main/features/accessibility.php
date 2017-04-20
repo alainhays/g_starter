@@ -67,12 +67,12 @@ add_filter( 'genesis_do_nav', function ( $nav_output, $nav, $args ) {
 	if ( ! genesis_nav_menu_supported( 'primary' ) || ! has_nav_menu( 'primary' ) )
         return;
     $heading =  '<h2 class="screen-reader-text">'. __( 'Main navigation', CHILD_THEME_TEXT_DOMAIN ) .'</h2>';
-    $nav_markup_open = genesis_markup( array(
+    $nav_markup_open = genesis_markup( [
         'html5' => '<nav %s>',
         'xhtml' => '<div id="nav" class="nav-primary">',
         'context' => 'nav-primary',
         'echo' => false,
-    ) );
+    ] );
     $nav_markup_open .= genesis_structural_wrap( 'menu-primary', 'open', 0 );
     $nav_markup_close = genesis_structural_wrap( 'menu-primary', 'close', 0 );
     $nav_markup_close .= genesis_html5() ? '</nav>' : '</div>';

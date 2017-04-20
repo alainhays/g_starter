@@ -14,8 +14,9 @@ add_filter( 'login_headertitle', function () {
 
 // ** Custom login logo
 // Make sure you have a login-logo.png in assets/images folder before using this function!
-// Assumes png logo by default.
-// add_action( 'login_enqueue_scripts', 'g_starter_login_logo' );
+// Assumes png logo by default
+// Disable by default (uncomment the line below to activate)
+//add_action( 'login_enqueue_scripts', 'g_starter_login_logo' );
 function g_starter_login_logo() {
 	?><style type="text/css">
 		body.login h1 a {
@@ -35,7 +36,8 @@ add_filter( 'wp_mail_from_name',function () {
 });
 
 // ** WordPress-generated emails appear 'from' your WordPress admin email address
-// add_filter( 'wp_mail_from', 'g_starter_wp_mail_from' );
+// Disable by default (uncomment the line below to activate)
+//add_filter( 'wp_mail_from', 'g_starter_wp_mail_from' );
 function g_starter_wp_mail_from () {
 	return get_option( 'admin_email' );
 }
