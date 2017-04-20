@@ -25,7 +25,7 @@ add_action( 'template_redirect', function () {
 
 // ** Limit searching to just posts, excluding pages and CPTs
 // See: http://www.mhsiung.com/2009/11/limit-wordpress-search-scope-to-blog-posts/
-// Disabled by default (uncoment the line below to activate)
+// Disabled by default (uncomment the line below to activate)
 //add_action( 'pre_get_posts', 'g_starter_search_only_post' );
 function g_starter_search_only_post ( $query ) {
 	if( is_admin() )

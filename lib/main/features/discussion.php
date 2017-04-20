@@ -11,7 +11,7 @@ add_action( 'pre_ping', function ( &$links ) {
 });
 
 // ** Remove pings frontend
-// Disabled by default (uncoment the line below to activate)
+// Disabled by default (uncomment the line below to activate)
 //remove_action( 'genesis_pings', 'genesis_do_pings' );
 
 // ** Remove url field in the entry comments

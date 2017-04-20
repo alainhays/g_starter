@@ -27,13 +27,13 @@ add_filter( 'the_password_form', function ( $post = 0 ) {
 });
 
 // ** Allow pages to have excerpt
-// Disabled by default (uncoment the line below to activate)
+// Disabled by default (uncomment the line below to activate)
 //add_post_type_support( 'page', 'excerpt' );
 
 // ** Customize the post info text
 // See:http://www.briangardner.com/code/customize-post-info/
 // Friendly note: use [post_author] to return the author's name, without an archive link.
-// Disabled by default (uncoment the lines below to activate)
+// Disabled by default (uncomment the lines below to activate)
 //remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 //add_filter( 'genesis_post_info', 'g_starter_post_info' );
 function g_starter_post_info () {
@@ -42,7 +42,7 @@ function g_starter_post_info () {
 
 // ** Customize the post meta text
 // See:http://www.briangardner.com/code/customize-post-meta/
-// Disabled by default (uncoment the lines below to activate)
+// Disabled by default (uncomment the lines below to activate)
 //remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 //add_filter( 'genesis_post_meta', 'g_starter_post_meta' );
 function g_starter_post_meta () {
@@ -50,7 +50,7 @@ function g_starter_post_meta () {
 }
 
 // Display Post Author Avatar
-// Disabled by default (uncoment the line below to activate)
+// Disabled by default (uncomment the line below to activate)
 //add_action('genesis_entry_header', 'g_starter_post_author_avatar' );
 function g_starter_post_author_avatar () {
 	echo get_avatar(get_the_author_meta('email'), 30);

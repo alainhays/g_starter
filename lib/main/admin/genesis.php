@@ -61,7 +61,7 @@ remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
 remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
 
 // ** Disable Genesis widgets
-// Disabled by default (uncoment the lines below to activate)
+// Disabled by default (uncomment the lines below to activate)
 add_action( 'widgets_init', function () {
     // unregister_widget( 'Genesis_Featured_Page' );    
     // unregister_widget( 'Genesis_User_Profile_Widget' );

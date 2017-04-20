@@ -22,12 +22,12 @@ add_filter( 'show_admin_bar', function ( $default ) {
 }, 99 );
 
 // ** Remove Welcome Panel from dashboard
-// Disabled by default (uncoment the line below to activate) 
+// Disabled by default (uncomment the line below to activate) 
 //remove_action('welcome_panel', 'wp_welcome_panel');
 
 // ** Remove admin dashboard metaboxes
 // The first value passed is the metabox ID, so you could remove other metaboxes added by plugins
-// Partially enabled by default (uncoment lines below to remove other metaboxes) 
+// Partially enabled by default (uncomment lines below to remove other metaboxes) 
 add_action( 'admin_menu', function () {
 	//remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
 	remove_meta_box( 'dashboard_activity', 'dashboard', 'core' );
@@ -42,7 +42,7 @@ add_action( 'admin_menu', function () {
 });
 
 // ** Remove default admin dashboard menus
-// Disabled by default (uncoment lines below to activate) 
+// Disabled by default (uncomment lines below to activate) 
 add_action( 'admin_menu', function () {
 	//remove_menu_page('index.php'); 				// Dashboard tab
 	//remove_menu_page('edit.php'); 				// Posts
@@ -82,7 +82,7 @@ add_action( 'admin_init', function () {
 });
 
 // ** Remove default post and page meta boxes. You should always unhook 'Custom Fields', since it can be a large query
-// Disabled by default (uncoment the lines below to activate)
+// Disabled by default (uncomment the lines below to activate)
 add_action( 'do_meta_boxes', function () {
 		// Post
 	//remove_meta_box( 'authordiv', 'post', 'normal' );
@@ -151,7 +151,7 @@ add_filter( 'user_contactmethods', function ( $fields ) {
 remove_action('admin_color_scheme_picker', 'admin_color_scheme_picker');
 
 // ** Disable WP widgets
-// Disabled by default (uncoment the lines below to activate)
+// Disabled by default (uncomment the lines below to activate)
 add_action('widgets_init', function () {
 	// unregister_widget( 'WP_Widget_Pages' );
 	// unregister_widget( 'WP_Widget_Calendar' );
