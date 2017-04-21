@@ -27,7 +27,7 @@ add_filter( 'show_admin_bar', function ( $default ) {
 
 // ** Remove admin dashboard metaboxes
 // The first value passed is the metabox ID, so you could remove other metaboxes added by plugins
-// Partially enabled by default (uncomment lines below to remove other metaboxes) 
+// Uncomment the lines below to remove other metaboxes 
 add_action( 'admin_menu', function () {
 	//remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
 	remove_meta_box( 'dashboard_activity', 'dashboard', 'core' );

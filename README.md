@@ -9,7 +9,7 @@ Nic Beltramelli   [@nicbeltramelli](https://twitter.com/NicBeltramelli)
 
 ## Summary
 
-g_starter is a starter child theme for Genesis Framework developers, based on HTML5 Boilerplate, gulp and Bower. It supports both Sass and Less, uses BrowserSync for syncing changes across local development devices and asset-builder to assemble dependencies through the JSON file based asset pipeline.
+g_starter is a starter child theme for Genesis Framework developers, based on HTML5 Boilerplate, Gulp and Bower. It supports both Sass and Less, uses BrowserSync for syncing changes across local development devices and asset-builder to assemble dependencies through the JSON file based asset pipeline.
 Tested up to WordPress 4.7 and Genesis 2.4.2.
 
 

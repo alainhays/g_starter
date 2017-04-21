@@ -32,7 +32,7 @@ add_filter( 'the_password_form', function ( $post = 0 ) {
 
 // ** Customize the post info text
 // See:http://www.briangardner.com/code/customize-post-info/
-// Friendly note: use [post_author] to return the author's name, without an archive link.
+// Friendly note: use [post_author] to return the author's name, without an archive link
 // Disabled by default (uncomment the lines below to activate)
 //remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 //add_filter( 'genesis_post_info', 'g_starter_post_info' );
@@ -49,7 +49,7 @@ function g_starter_post_meta () {
 	return '[post_categories before="' . __( 'Filed Under: ', CHILD_THEME_TEXT_DOMAIN ) . '"] [post_tags before="' . __( 'Tagged: ', CHILD_THEME_TEXT_DOMAIN ) . '"]';
 }
 
-// Display Post Author Avatar
+// ** Display Post Author Avatar
 // Disabled by default (uncomment the line below to activate)
 //add_action('genesis_entry_header', 'g_starter_post_author_avatar' );
 function g_starter_post_author_avatar () {

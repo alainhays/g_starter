@@ -102,8 +102,7 @@ function g_starter_simple_favicon () {
 // See: http://calendar.perfplanet.com/2016/prefer-defer-over-async/
 add_filter('script_loader_tag', function ( $tag, $handle ) {
 	switch( $handle ) {
-		case 'jquery':
-		case 'bfg':
+		case 'g_starter-scripts':
 			return str_replace( ' src', ' defer src', $tag );
 	}
 	return $tag;

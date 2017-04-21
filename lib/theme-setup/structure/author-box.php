@@ -2,12 +2,15 @@
 
 if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// ** Gravityforms Add option to remove field labels
-add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+// ** Modify size of the Gravatar in the author box.
+add_filter( 'genesis_author_box_gravatar_size', function ( $size ) {
+	return 90;
+});
 
-// ** Customize Genesis Author Box
-add_filter( 'genesis_author_box', function () {
-	
+// ** Custom Genesis Author Box
+// Disabled by default (uncomment the line below to activate)
+//add_filter( 'genesis_author_box', 'g_starter_author_box' , 10, 6 );
+function g_starter_author_box ( $output, $context, $pattern, $gravatar, $title, $description ) {	
 	if( is_single() ) {
 		// On single post display author description excerpt
 		$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
@@ -64,4 +67,4 @@ add_filter( 'genesis_author_box', function () {
 		$output .= '</div>';
 	}	
 	return $output;
-}, 10, 6 );
+}

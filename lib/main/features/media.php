@@ -2,39 +2,29 @@
 
 if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// ** Change the media manager default view to 'upload', instead of 'library'
-// See: http://wordpress.stackexchange.com/questions/96513/how-to-make-upload-filesselected-by-default-in-insert-media
-add_action( 'admin_footer-post-new.php', 'g_starter_media_manager_default_view' );
-add_action( 'admin_footer-post.php', 'g_starter_media_manager_default_view' );
-function g_starter_media_manager_default_view() {
-	?>
-	<script type="text/javascript">
-		jQuery(document).ready(function($){
-			wp.media.controller.Library.prototype.defaults.contentUserSetting=false;
-		});
-	</script>
-	<?php
+// ** Downsize uploaded image if too large
+// See: https://wordpress.stackexchange.com/questions/63707/automatically-replace-original-uploaded-image-with-large-image-size
+// Disabled by default (uncomment the line below to activate)
+//add_filter( 'wp_generate_attachment_metadata', 'g_starter_downsize_uploaded_image', 99 );
+function g_starter_downsize_uploaded_image( $image_data ) {
+	$max_image_size_name = 'large';
+	// Abort if no max image
+	if( !isset($image_data['sizes'][$max_image_size_name]) )
+		return $image_data;
+	// paths to the uploaded image and the max image
+	$upload_dir              = wp_upload_dir();
+	$uploaded_image_location = $upload_dir['basedir'] . '/' . $image_data['file'];
+	$max_image_location      = $upload_dir['path'] . '/' . $image_data['sizes'][$max_image_size_name]['file'];
+	// Delete original image
+	unlink($uploaded_image_location);
+	// Rename max image to original image
+	rename( $max_image_location, $uploaded_image_location );
+	// Update and return image metadata
+	$image_data['width']  = $image_data['sizes'][$max_image_size_name]['width'];
+	$image_data['height'] = $image_data['sizes'][$max_image_size_name]['height'];
+	unset($image_data['sizes'][$max_image_size_name]);
+	return $image_data;
 }
-
-// ** Prevent authors and contributors from seeing media that isn't theirs
-// See: http://wordpress.org/support/topic/restrict-editors-from-viewing-media-that-others-have-uploaded
-add_filter( 'posts_where', function ( $where ) {
-	global $current_user;
-	if(
-		is_admin() &&
-		!current_user_can('edit_others_posts') &&
-		isset($_POST['action']) &&
-		$_POST['action'] === 'query-attachments'
-	) {
-		$where .= ' AND post_author=' . $current_user->data->ID;
-	}
-	return $where;
-});
-
-// ** Remove the injected styles for the [gallery] shortcode
-add_filter( 'gallery_style', function ( $css ) {
-	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
-});
 
 // ** Change WP JPEG compression (WP default is 90%)
 // See: http://wpmu.org/how-to-change-jpeg-compression-in-wordpress/
